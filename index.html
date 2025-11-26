@@ -235,32 +235,43 @@
   </div>
 
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
+  <section class="hero is-fullheight">
+    <div class="hero-video">
+      <video id="hero-video" autoplay muted loop playsinline>
+        <source src="assets/Postervideo 1080P.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+    <div class="hero-body" style="padding-top: 20vh;">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
+            <h1 class="title is-1 publication-title has-text-white" style="font-size: 3.5rem;">
+              PosterCopilot: Automated Poster Generation
+            </h1>
+            <div class="is-size-5 publication-authors has-text-white">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank" class="has-text-white">First Author</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank" class="has-text-white">Second Author</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" class="has-text-white">Third Author</a><sup>2</sup>
                   </span>
                   </div>
 
-                  <div class="is-size-5 publication-authors">
+                  <div class="is-size-5 publication-authors mt-3 has-text-white">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>Institution Name,</span>
+                    <span class="author-block"><sup>2</sup>Second Institution</span>
                   </div>
 
-                  <div class="column has-text-centered">
+                  <div class="is-size-6 publication-authors mt-2 has-text-white">
+                    <span class="author-block">Conference name and year</span>
+                  </div>
+
+                  <div class="column has-text-centered mt-4">
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
@@ -312,25 +323,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -491,6 +483,45 @@
 </section>
 <!--End BibTex citation -->
 
+  <style>
+    /* Hero Video Styles */
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .hero-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.8) 90%);
+    }
+
+    .hero.is-fullheight {
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .hero.is-fullheight .hero-body {
+      align-items: center;
+      display: flex;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 
   <footer class="footer">
   <div class="container">
