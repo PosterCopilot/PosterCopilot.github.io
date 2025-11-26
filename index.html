@@ -109,6 +109,32 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
+  <!-- Hero Video Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var video = document.getElementById('hero-video');
+      if (video) {
+        // 确保视频加载完成后播放
+        video.addEventListener('loadedmetadata', function() {
+          video.play().catch(function(error) {
+            console.log('视频自动播放失败:', error);
+          });
+        });
+        
+        // 确保视频循环播放
+        video.addEventListener('ended', function() {
+          video.currentTime = 0;
+          video.play();
+        });
+        
+        // 强制播放视频
+        video.play().catch(function(error) {
+          console.log('视频播放失败:', error);
+        });
+      }
+    });
+  </script>
+  
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
@@ -237,8 +263,9 @@
   <main id="main-content">
   <section class="hero is-fullheight">
     <div class="hero-video">
-      <video id="hero-video" autoplay muted loop playsinline>
+      <video id="hero-video" autoplay muted loop playsinline preload="auto">
         <source src="assets/Postervideo 1080P.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
       </video>
       <div class="hero-video-overlay"></div>
     </div>
