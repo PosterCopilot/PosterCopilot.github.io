@@ -338,7 +338,19 @@
 </section>
 
   <style>
-    /* Hero video background styles */
+    /* 强制让 Hero 容器背景透明，否则会遮住下面的视频 */
+    section.hero {
+      background-color: transparent !important;
+    }
+
+    section.hero.is-fullheight {
+      min-height: 100vh;
+      position: relative;
+      overflow: visible !important;
+      animation: none !important;
+    }
+
+    /* 视频容器 */
     .hero-video {
       position: absolute;
       top: 0;
@@ -346,30 +358,30 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      z-index: -1;
+      z-index: -1; /* 保持在文字下方 */
     }
 
     .hero-video video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* 确保视频铺满屏幕不留黑边 */
     }
 
+    /* 遮罩层，让文字更清晰 */
     .hero-video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.8) 90%);
+      background: rgba(0, 0, 0, 0.4); /* 纯黑色半透明遮罩 */
+      z-index: 0;
     }
 
-    /* Override index.css conflicts */
-    section.hero.is-fullheight {
-      min-height: 100vh;
+    /* 确保文字在视频和遮罩之上 */
+    .hero-body {
+      z-index: 1;
       position: relative;
-      overflow: visible !important;
-      animation: none !important;
     }
   </style>
 
