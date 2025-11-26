@@ -109,6 +109,20 @@
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
+  <!-- Hero Video Script for MP4 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var video = document.getElementById('hero-video');
+      if (video) {
+        video.addEventListener('loadedmetadata', function () {
+          video.play();
+        });
+        // 立即尝试播放
+        video.play();
+      }
+    });
+  </script>
+  
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
@@ -236,8 +250,8 @@
 
   <section class="hero is-fullheight">
     <div class="hero-video">
-      <video id="hero-video" autoplay muted loop playsinline>
-        <source src="assets/Postervideo 1080P.mp4" type="video/mp4">
+      <video id="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/Postervideo%201080P.mp4" type="video/mp4">
       </video>
       <div class="hero-video-overlay"></div>
     </div>
@@ -324,6 +338,7 @@
 </section>
 
   <style>
+    /* Hero video background styles */
     .hero-video {
       position: absolute;
       top: 0;
@@ -349,8 +364,12 @@
       background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.8) 90%);
     }
 
-    .hero.is-fullheight {
+    /* Override index.css conflicts */
+    section.hero.is-fullheight {
       min-height: 100vh;
+      position: relative;
+      overflow: visible !important;
+      animation: none !important;
     }
   </style>
 
