@@ -338,50 +338,54 @@
 </section>
 
   <style>
-    /* 强制让 Hero 容器背景透明，否则会遮住下面的视频 */
+    /* 1. 确保 Hero 容器是定位基准，并给一个黑色背景作为视频加载前的兜底 */
     section.hero {
-      background-color: transparent !important;
+      position: relative;
+      background-color: #000 !important; /* 如果视频加载失败，显示黑色背景，保证白字能看清 */
+      overflow: hidden;
     }
 
     section.hero.is-fullheight {
       min-height: 100vh;
-      position: relative;
-      overflow: visible !important;
-      animation: none !important;
     }
 
-    /* 视频容器 */
+    /* 2. 视频层 - 放在最底层 (z-index: 0) */
     .hero-video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden;
-      z-index: -1; /* 保持在文字下方 */
+      z-index: 0; 
     }
 
     .hero-video video {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* 确保视频铺满屏幕不留黑边 */
+      object-fit: cover; /* 关键：保证视频填满不留黑边 */
     }
 
-    /* 遮罩层，让文字更清晰 */
+    /* 3. 遮罩层 - 放在视频上面 (z-index: 1) */
     .hero-video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* 纯黑色半透明遮罩 */
-      z-index: 0;
+      background: rgba(0, 0, 0, 0.5); /* 0.5 是透明度，数值越大越黑 */
+      z-index: 1;
     }
 
-    /* 确保文字在视频和遮罩之上 */
+    /* 4. 内容层 - 放在最顶层 (z-index: 2) */
     .hero-body {
-      z-index: 1;
       position: relative;
+      z-index: 2; /* 必须比上面两个都大，字才能显示在最上面 */
+      width: 100%;
+    }
+
+    /* 修复可能存在的 Bulma 默认背景干扰 */
+    .hero.is-light {
+      background-color: transparent !important;
     }
   </style>
 
