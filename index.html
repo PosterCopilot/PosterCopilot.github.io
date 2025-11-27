@@ -474,31 +474,31 @@
             
           </p>
         </div>
-        <div class="box">
-          <h3 class="title is-4">Technical Framework</h3>
-          <div class="features-list">
-            <p class="mb-4">
-              <span class="has-text-weight-bold has-text-primary">1. Camera Motion Quantization</span><br>
-              <strong>Quantized Camera Motion (QCM)</strong> translates camera trajectories into intuitive directional controls (forward/backward/left/right) and rotational actions (turn right/turn left/tilt up/tilt down) mapped to keyboard input. QCM embeds spatiotemporal context into control signals without additional learnable modules.
-            </p>
-            
-            <p class="mb-4">
-              <span class="has-text-weight-bold has-text-info">2. Video Generation Architecture</span><br>
-              <strong>Masked Video Diffusion Transformer (MVDT)</strong> with frame memory enables infinite autoregressive generation. This overcomes text-based control limitations observed in prior work, maintaining consistency across long sequences.
-            </p>
-            
-            <p class="mb-4">
-              <span class="has-text-weight-bold has-text-warning">3. Enhanced Sampling Mechanisms</span><br>
-              • <strong>Anti-Artifact Mechanism (AAM)</strong>: Training-free refinement of latent representations to enhance details<br>
-              • <strong>Time-Travel SDE (TTS-SDE)</strong>: Stochastic differential equation-based sampling using future-frame guidance to maintain temporal coherence
-            </p>
-            
-            <p class="mb-4">
-              <span class="has-text-weight-bold has-text-danger">4. Optimization Acceleration</span><br>
-              Synergistic optimization combining <strong>adversarial distillation</strong> and <strong>caching mechanisms</strong> boosts sampling efficiency 3× while preserving visual fidelity.
-            </p>
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="box">
+      <h3 class="title is-4">Technical Framework</h3>
+      <div class="features-list">
+        <p class="mb-4">
+          <span class="has-text-weight-bold has-text-primary">1. Camera Motion Quantization</span><br>
+          <strong>Quantized Camera Motion (QCM)</strong> translates camera trajectories into intuitive directional controls (forward/backward/left/right) and rotational actions (turn right/turn left/tilt up/tilt down) mapped to keyboard input. QCM embeds spatiotemporal context into control signals without additional learnable modules.
+        </p>
+        
+        <p class="mb-4">
+          <span class="has-text-weight-bold has-text-info">2. Video Generation Architecture</span><br>
+          <strong>Masked Video Diffusion Transformer (MVDT)</strong> with frame memory enables infinite autoregressive generation. This overcomes text-based control limitations observed in prior work, maintaining consistency across long sequences.
+        </p>
+        
+        <p class="mb-4">
+          <span class="has-text-weight-bold has-text-warning">3. Enhanced Sampling Mechanisms</span><br>
+          • <strong>Anti-Artifact Mechanism (AAM)</strong>: Training-free refinement of latent representations to enhance details<br>
+          • <strong>Time-Travel SDE (TTS-SDE)</strong>: Stochastic differential equation-based sampling using future-frame guidance to maintain temporal coherence
+        </p>
+        
+        <p class="mb-4">
+          <span class="has-text-weight-bold has-text-danger">4. Optimization Acceleration</span><br>
+          Synergistic optimization combining <strong>adversarial distillation</strong> and <strong>caching mechanisms</strong> boosts sampling efficiency 3× while preserving visual fidelity.
+        </p>
       </div>
     </div>
   </div>
