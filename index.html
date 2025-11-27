@@ -482,23 +482,19 @@
         
         <p class="mb-4">
           <span class="has-text-weight-bold" style="color: #3B82F6;">1. Perturbed Supervised Fine-Tuning</span><br>
-          <strong>Perturbed Supervised Fine-Tuning (PSFT)</strong> translates camera trajectories into intuitive directional controls (forward/backward/left/right) and rotational actions (turn right/turn left/tilt up/tilt down) mapped to keyboard input. QCM embeds spatiotemporal context into control signals without additional learnable modules.
+          <strong>Perturbed Supervised Fine-Tuning (PSFT)</strong> reformulates coordinate regression into a distribution-based learning paradigm by introducing controlled perturbations to ground-truth coordinates. Compared to point-wise regression, learning a coordinate distribution allows the model to reason over continuous spatial relationships rather than memorizing discrete positions, leading to more coherent and aesthetically balanced layouts.
         </p>
         
         <p class="mb-4">
           <span class="has-text-weight-bold" style="color: #10B981;">2. Reinforcement Learning for Visual-Reality Alignment</span><br>
-          <strong>Reinforcement Learning for Visual-Reality Alignment (RL-VRA)</strong> with frame memory enables infinite autoregressive generation. This overcomes text-based control limitations observed in prior work, maintaining consistency across long sequences.
+          <strong>Reinforcement Learning for Visual-Reality Alignment (RL-VRA)</strong> introduces verifiable geometric reward signals to explicitly correct residual spatial inaccuracies after SFT, providing reliable visual-reality alignment.
         </p>
         
         <p class="mb-4">
           <span class="has-text-weight-bold has-text-danger">3. Reinforcement Learning from Aesthetic Feedback</span><br>
-          <strong>Reinforcement Learning from Aesthetic Feedback (RLAF)</strong>: Training-free refinement of latent representations to enhance details<br>
+          <strong>Reinforcement Learning from Aesthetic Feedback (RLAF)</strong>employs a learned aesthetic reward model to encourage the model to generate aesthetically coherent and diverse compositions that extend beyond the ground truth.
         </p>
         
-        <p class="mb-4">
-          <span class="has-text-weight-bold" style="color: #8B5CF6;">4. Optimization Acceleration</span><br>
-          Synergistic optimization combining <strong>adversarial distillation</strong> and <strong>caching mechanisms</strong> boosts sampling efficiency 3× while preserving visual fidelity.
-        </p>
         
       </div>
     </div>
